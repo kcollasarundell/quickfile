@@ -4,13 +4,12 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/gorilla/handlers"
 )
 
 func loggingHandler(h http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		log.Println(r.RemoteAddr, r.Method, r.URL.Path )
-		h.ServeHTTP(w, r)
-	})
+	return handlers.LoggingHandler(os.Stdout, h)
 }
 
 func maxAgeHandler(h http.Handler) http.Handler {

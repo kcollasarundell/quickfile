@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/gorilla/handlers"
+	"github.com/justinas/alice"
 )
 
 func loggingHandler(h http.Handler) http.Handler {
@@ -24,8 +25,7 @@ func main() {
 	if len(os.Args) >= 2 {
 		port = os.Args[1]
 	}
-	fileHandler := http.FileServer(http.Dir("."))
-	cacheControl := maxAgeHandler(fileHandler)
-	logItAll := loggingHandler(cacheControl)
-	log.Fatal(http.ListenAndServe(":"+port, logItAll))
+	h := http.FileServer(http.Dir("."))
+	c := alice.New(loggingHandler, maxAgeHandler).Then(h)
+	log.Fatal(http.ListenAndServe(":"+port, c))
 }

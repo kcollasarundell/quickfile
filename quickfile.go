@@ -27,5 +27,5 @@ func main() {
 	fileHandler := http.FileServer(http.Dir("."))
 	cacheControl := maxAgeHandler(fileHandler)
 	logItAll := loggingHandler(cacheControl)
-	http.ListenAndServe(":"+port, logItAll)
+	log.Fatal(http.ListenAndServe(":"+port, logItAll))
 }

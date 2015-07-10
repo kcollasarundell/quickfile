@@ -26,6 +26,6 @@ func main() {
 		port = os.Args[1]
 	}
 	h := http.FileServer(http.Dir("."))
-	c := alice.New(loggingHandler, maxAgeHandler).Then(h)
+	c := alice.New(loggingHandler, handlers.CompressHandler, maxAgeHandler).Then(h)
 	log.Fatal(http.ListenAndServe(":"+port, c))
 }

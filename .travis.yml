@@ -1,6 +1,8 @@
 language: go
-
 go:
-  - 1.5
-  - 1.4
-  - tip
+- 1.5
+- 1.4
+- tip
+notifications:
+  slack:
+    secure: FDEzLxZEWdj9BYInGLUKYygDuq1aJYKNoAzPCNGzYrk4z28Np9chciRJsyP8PJ458hq+JDVxjU6JvWzbdzxLEnXKdaZrEHqo467bbbXqcTFgTak6dapPyN5ViIF+oS8it1Gjw9KKGPJORueGnYdj2cx0fZ4vYK/IsJc/9RvIErF5KiKc+DhEgPWs9V9yq4ND6d9kKBj4jD8xlV20zFoXW0iuiHJ+HweYL2d2+bRNcr0qoOlJ0BmT9erSIdXzmY+iP9Z/zJvX5++xuWXb7hcmsqjXRhvVt7H2CfVuvH/KAhJBaHmHs/4UI4AGKXQnJtdmZGoyZtAcqwpHWvvUBgKXdewGAetSgeSK8qbW6tl7o5B+WjPFhGl3khNRK2RRjL3x0cjbZUEMqh16h++F5UEIr65ymNiHemOJgQrEFzpELXOh1PpASFAdbo8EK5vSIwWDN9HNoquCnIRxcxj2PY158frXH2/OJRqgghFsvZyafHCldG8MK/L4Am/76h8etv8hlhh9C7Dngi3CSeCSBW90wwVmDGekiPYsalNfIJNnKhQmlNgbKisJlBjFhdoFeFmjG5frC8YKXRwCXD5SBdHHjOshfL0DWQjVZqpmlieIOkTiOPUTaqjswzhHD9zmLwpIObc7CsJwn6zfrkx1u1rizRcL3mqf62qTzLjxfwJJKX4=
